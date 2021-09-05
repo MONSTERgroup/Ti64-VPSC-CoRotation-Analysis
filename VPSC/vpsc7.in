@@ -42,6 +42,6 @@ shape1.100
 4		  ivgvar=4 runs a rigid rotation of the specimen
 rotmatrix.txt
 0         ivgvar=0 will run a monotonic strain path
-compres.3
+tension.3
 4		  ivgvar=4 runs a rigid rotation of the specimen
 rotmatrixINV.txt

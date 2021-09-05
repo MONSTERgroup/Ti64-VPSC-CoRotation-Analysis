@@ -16,6 +16,20 @@ SS = specimenSymmetry('-1');
 ori_a0 = orientation('Euler',135*degree,90*degree,325*degree,CSa);
 ori_b0 = orientation('Euler',0*degree,0*degree,0*degree,CSb);
 
+
+% Move the initial orientations into the z || c reference frame
+c = ori_a0 * zvector; 
+rot = rotation('map',c,zvector);
+ori_a0 = rot * ori_a0;
+ori_b0 = rot * ori_b0; 
+
+% Overwrite the euler angles in the VPSC alpha and beta files. 
+pname = 'C:\Users\victoria.miller\Documents\GitHub\Ti64-VPSC-CoRotation-Analysis\VPSC';
+fname_a0 = [pname filesep 'alphaTex.TEX'];
+fname_b0 = [pname filesep 'betaTex.TEX'];
+writeInitTex(ori_a0,fname_a0);
+writeInitTex(ori_b0,fname_b0);
+
 % Number of strain states in str_str file
 segments = 22;
 

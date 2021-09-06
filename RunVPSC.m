@@ -31,7 +31,7 @@ for i = 1:length(r(:))
     WriteRot(rot2(i),pwd,'rotmatrixINV.txt');
     
     % Run VPSC
-    [status, results] = dos('vpsc_7SS.exe','-echo');
+    [status, results] = dos('vpsc7_precise_portable.exe','-echo');
     
     % Handle VPSC Erros
     if status~=0
